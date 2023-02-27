@@ -10,3 +10,20 @@ Follow-up:What if you can´t use division?
 
 
 '''
+# 0(n**2)
+'''
+a=[1,2,3,4,5]
+def result(a):
+    b={}
+    for i in range(len(a)):
+        b[i]=1
+        for j in range(len(a)):
+            if(i!=j):
+                b[i]*=a[j]
+                
+    c=[b[x] for x in b] 
+            
+    return c
+    
+print(result(a))
+'''
