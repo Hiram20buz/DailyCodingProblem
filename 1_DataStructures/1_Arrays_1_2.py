@@ -6,7 +6,7 @@ window that must be sorted in order for the entire array to be sorted.
 For example,given [3,7,5,6,9],you should return (1,3).
 
 '''
-#Solution 1
+#Solution 1 O(nlog(n))
 '''
 def window(array):
     left,right=None,None
@@ -26,7 +26,7 @@ def window(array):
 print(window([3,7,5,6,9]))
 
 '''
-#Solution 2
+#Solution 2 O(n)
 '''
 def window(array):
     left,right=None,None
