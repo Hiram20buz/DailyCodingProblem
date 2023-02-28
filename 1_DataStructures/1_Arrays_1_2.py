@@ -14,7 +14,7 @@ def window(array):
     
     for i in range(len(array)):
         if array[i] != s[i] and left is None:
-            left=1
+            left=i
             #print(left)
             
         elif array[i] != s[i]:
@@ -25,6 +25,30 @@ def window(array):
     
 print(window([3,7,5,6,9]))
 
-
-
+'''
+#Solution 2
+'''
+def window(array):
+    left,right=None,None
+    n=len(array)
+    max_seen,min_seen=-float("inf"),float("inf")
+    
+    for i in range(n):
+        max_seen=max(max_seen,array[i])
+        #print(max_seen)
+        if array[i] < max_seen:
+            right=i
+            #print(right)
+            
+    for i in range(n-1,-1,-1):
+        min_seen=min(min_seen,array[i])
+        #print(min_seen)
+        if array[i] > min_seen:
+            left=i
+            #print(left)
+        
+            
+    return left,right
+    
+print(window([3,7,5,6,9]))
 '''
