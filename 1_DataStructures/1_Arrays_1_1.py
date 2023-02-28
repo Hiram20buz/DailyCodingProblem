@@ -27,7 +27,7 @@ def result(a):
     
 print(result(a))
 '''
-# Solution
+# Solution o(n) time
 b=[1,2,3,4,5]
 
 def products(nums):
