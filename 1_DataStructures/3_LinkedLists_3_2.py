@@ -72,3 +72,43 @@ second = ListNode(25)
 ans=Solution().addTwoNumbers(first,second)
 ans.printList()
 '''
+# Solution but modified it
+'''
+class ListNode(object):
+    def __init__(self, x,next=None):
+        self.val = x
+        self.next = next
+   
+
+ 
+b=ListNode(99)
+a=ListNode(25)
+
+
+
+print(a.val) 
+
+def add(l1,l2,carry=0):
+    
+    result = ListNode(0)
+    result_tail = result
+    carry = 0
+                
+    while l1 or l2 or carry:
+        val1  = (l1.val if l1 else 0)
+        val2  = (l2.val if l2 else 0)
+        carry, out = divmod(val1+val2 + carry, 10)    
+                      
+        result_tail.next = ListNode(out)
+        result_tail = result_tail.next                      
+            
+        l1 = (l1.next if l1 else None)
+        l2 = (l2.next if l2 else None)
+            
+               
+    return result.next
+    
+print(add(a,b,carry=0).val)
+print(add(a,b,carry=0).next.val)
+print(add(a,b,carry=0).next.next.val)
+'''
